@@ -1,5 +1,61 @@
 # Changelog
 
+## 6.10.1
+
+### 🚀 Features
+
+- Support OP Holocene upgrade ([#11355](https://github.com/blockscout/blockscout/issues/11355))
+- Add active DB connections metric ([#11321](https://github.com/blockscout/blockscout/issues/11321))
+- Add protocol icon to the search result ([#11478](https://github.com/blockscout/blockscout/issues/11478))
+
+### 🐛 Bug Fixes
+
+- Remove unnecessary internal transactions preload ([#11643](https://github.com/blockscout/blockscout/issues/11643))
+- Fix bug in Indexer.Fetcher.EmptyBlocksSanitizer module ([#11636](https://github.com/blockscout/blockscout/pull/11636))
+- Multichain search: process address in chunks ([#11632](https://github.com/blockscout/blockscout/issues/11632))
+- Fix transactions deadlock ([#11623](https://github.com/blockscout/blockscout/issues/11623))
+- Fix tokens and transactions deadlocks ([#11620](https://github.com/blockscout/blockscout/issues/11620))
+- Order address names to return the latest non-primary ([#11612](https://github.com/blockscout/blockscout/issues/11612))
+- Rename tx_burnt_fee prop in API v2 endpoint ([#11563](https://github.com/blockscout/blockscout/issues/11563))
+- Celo fee handler ([#11387](https://github.com/blockscout/blockscout/issues/11387))
+- Fix addresses deadlock ([#11616](https://github.com/blockscout/blockscout/issues/11616))
+- Besu raw trace ([#11413](https://github.com/blockscout/blockscout/issues/11413))
+- Fix tokens deadlock ([#11603](https://github.com/blockscout/blockscout/issues/11603))
+- Set timeout: :infinity for PendingTransactionsSanitizer delete ([#11600](https://github.com/blockscout/blockscout/issues/11600))
+- Fixed Missing Closing Quotation Marks in sed Expressions Update version_bump.sh ([#11574](https://github.com/blockscout/blockscout/issues/11574))
+- The same DA blobs for different Arbitrum batches ([#11485](https://github.com/blockscout/blockscout/issues/11485))
+- Extended list of apps in the devcontainer helper script ([#11396](https://github.com/blockscout/blockscout/issues/11396))
+- Fix MarketHistory test ([#11547](https://github.com/blockscout/blockscout/issues/11547))
+- Advanced-filters csv format ([#11494](https://github.com/blockscout/blockscout/issues/11494))
+- Fix verifyproxycontract endpoint ([#11523](https://github.com/blockscout/blockscout/issues/11523))
+- Fix minor grammatical issue Update README.md ([#11544](https://github.com/blockscout/blockscout/issues/11544))
+
+### 📚 Documentation
+
+- Typo fix Update README.md ([#11595](https://github.com/blockscout/blockscout/issues/11595))
+- Typo fix Update CODE_OF_CONDUCT.md ([#11572](https://github.com/blockscout/blockscout/issues/11572))
+- Fix minor grammar and phrasing inconsistencies Update README.md ([#11548](https://github.com/blockscout/blockscout/issues/11548))
+- Fixed incorrect usage of -d flag in stop containers command Update README.md ([#11522](https://github.com/blockscout/blockscout/issues/11522))
+
+### ⚡ Performance
+
+- Implement batched requests and DB upsert operations Indexer.Fetcher.EmptyBlocksSanitizer module ([#11555](https://github.com/blockscout/blockscout/issues/11555))
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove unused Explorer.Token.InstanceOwnerReader module ([#11570](https://github.com/blockscout/blockscout/issues/11570))
+- Optimize coin balances deriving ([#11613](https://github.com/blockscout/blockscout/issues/11613))
+- Fix typo Update CHANGELOG.md ([#11607](https://github.com/blockscout/blockscout/issues/11607))
+- Add env variable for PendingTransactionsSanitizer interval ([#11601](https://github.com/blockscout/blockscout/issues/11601))
+- Documentation for Explorer.Chain.Transaction.History.Historian ([#11397](https://github.com/blockscout/blockscout/issues/11397))
+- Extend error message on updating token balance with token id ([#11524](https://github.com/blockscout/blockscout/issues/11524))
+
+### New ENV Variables
+
+| Variable                                    | Description                                                                                                                                                                                                                                            | Parameters                                                                              |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| `INDEXER_PENDING_TRANSACTIONS_SANITIZER_INTERVAL`             | Interval between pending transactions sanitizing. Implemented in [#11601](https://github.com/blockscout/blockscout/pull/11601).                                                                                                                                                                                                                                                                                                                                                                                                  | <p>Version: v6.10.1<br>Default: <code>1h</code><br>Applications: Indexer</p>                                          |
+
 ## 6.10.0
 
 ### 🚀 Features
@@ -14,7 +70,7 @@
 - Add request to /cache/{tx_hash} of transaction interpreter ([#11279](https://github.com/blockscout/blockscout/issues/11279))
 - Switch DB requests from replica to master in case of replica inaccessibility ([#11020](https://github.com/blockscout/blockscout/issues/11020))
 - Add gzip encoding option ([#11292](https://github.com/blockscout/blockscout/issues/11292))
-- Add Stylus verificaiton support ([#11183](https://github.com/blockscout/blockscout/issues/11183))
+- Add Stylus verification support ([#11183](https://github.com/blockscout/blockscout/issues/11183))
 - Multiple json rpc urls ([#10934](https://github.com/blockscout/blockscout/issues/10934))
 - Gas prices with base fee if no transactions ([#11132](https://github.com/blockscout/blockscout/issues/11132))
 - Zilliqa consensus data related to block  ([#10699](https://github.com/blockscout/blockscout/issues/10699))
@@ -76,6 +132,7 @@
 
 ### ⚙️ Miscellaneous Tasks
 
+- Return old response format in /api/v1/health endpoint ([#11511](https://github.com/blockscout/blockscout/issues/11511))
 - Rename blob_tx_count per naming conventions ([#11438](https://github.com/blockscout/blockscout/issues/11438))
 - Follow updated response schema in interpreter microservice ([#11402](https://github.com/blockscout/blockscout/issues/11402))
 - Remove raise in case if ETHEREUM_JSONRPC_HTTP_URL is not provided ([#11392](https://github.com/blockscout/blockscout/issues/11392))
@@ -129,6 +186,23 @@
 | `NFT_MEDIA_HANDLER_BACKFILL_QUEUE_SIZE`                   | Max size of backfill queue                                                                                                                                                                                                       | <p>Version: v6.10.0+<br>Default: <code>1000</code><br>Applications: Indexer</p>     |
 | `NFT_MEDIA_HANDLER_BACKFILL_ENQUEUE_BUSY_WAITING_TIMEOUT` | Timeout before new attempt to append item to backfill queue if it's full                                                                                                                                                         | <p>Version: v6.10.0+<br>Default: <code>1s</code><br>Applications: Indexer</p>       |
 | `NFT_MEDIA_HANDLER_CACHE_UNIQUENESS_MAX_SIZE`             | Max size of cache, where stored already uploaded token instances media                                                                                                                                                           | <p>Version: v6.10.0+<br>Default: <code>100_000</code><br>Applications: Indexer</p>  |
+| `ADDRESSES_BLACKLIST`                 | A comma-separated list of addresses to enable restricted access to them.                                                                                      | <p>Version: v6.10.0+<br>Default: (empty)<br>Applications: API</p>               |
+| `ADDRESSES_BLACKLIST_KEY`             | A key to access blacklisted addresses (either by `ADDRESSES_BLACKLIST` or by blacklist provider). Can be passed via query param to the page's URL: `?key=...` | <p>Version: v6.10.0+<br>Default: (empty)<br>Applications: API</p>               |
+| `ADDRESSES_BLACKLIST_PROVIDER`        | Blacklist provider type, available options: `blockaid`                                                                                                        | <p>Version: v6.10.0+<br>Default: <code>blockaid</code><br>Applications: API</p> |
+| `ADDRESSES_BLACKLIST_URL`             | URL to fetch balcklist from                                                                                                                                   | <p>Version: v6.10.0+<br>Default: (empty)<br>Applications: API</p>               |
+| `ADDRESSES_BLACKLIST_UPDATE_INTERVAL` | Interval between scheduled updates of blacklist                                                                                                               | <p>Version: v6.10.0+<br>Default: <code>15m</code><br>Applications: API</p>      |
+| `ADDRESSES_BLACKLIST_RETRY_INTERVAL`  | Time to wait before new attempt of blacklist fetching, after abnormal termination of fetching task                                                            | <p>Version: v6.10.0+<br>Default: <code>5s</code><br>Applications: API</p>       |
+| `MICROSERVICE_MULTICHAIN_SEARCH_URL`     | Multichain Search Service API URL. Integration is enabled, if this variable value contains valid URL. Implemented in [#11139](https://github.com/blockscout/blockscout/pull/11139)                                                                                                             | <p>Version: master<br>Default: (empty)<br>Applications: API, Indexer</p> |
+| `MICROSERVICE_MULTICHAIN_SEARCH_API_KEY`     | Multichain Search Service API key. Implemented in [#11139](https://github.com/blockscout/blockscout/pull/11139)                                                                                                             | <p>Version: master<br>Default: (empty)<br>Applications: API, Indexer</p> |
+| `MIGRATION_BACKFILL_MULTICHAIN_SEARCH_BATCH_SIZE`     | Batch size of backfilling Multichain Search Service DB. Implemented in [#11139](https://github.com/blockscout/blockscout/pull/11139)                                                                                                             | <p>Version: master<br>Default: (empty)<br>Applications: Indexer</p> |
+
+### Deprecated ENV Variables
+
+
+| Variable                                              | Required | Description                                                                                                                                                                                                                                                                                                                                        | Default                                                                                       | Version  | Need recompile | Deprecated in Version |
+| ----------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | -------- | -------------- | --------------------- |
+| `RESTRICTED_LIST`                                       |          | A comma-separated list of addresses to enable restricted access to them.                                                                                                                                                                                                                                                                                                                                                                        | (empty)                                                                            | v3.3.3+ |                | v6.10.0          |
+| `RESTRICTED_LIST_KEY`                                   |          | A key to access addresses listed in`RESTRICTED_LIST` variable. Can be passed via query param to the page's URL: `?key=...`                                                                                                                                                                                                                                                                                                                      | (empty)                                                                            | v3.3.3+ |                | v6.10.0          |
 
 ## 6.9.2
 
